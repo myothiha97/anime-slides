@@ -1,0 +1,123 @@
+* , *::before , *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,body {
+    width: 100%;
+    height: 100%;
+}
+
+.container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.items-wrapper {
+    width: 1260px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    /* border: 1px solid red; */
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.row {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    
+}
+
+.item {
+    /* overflow-y: scroll; */
+    margin: 12px;
+    width: calc(100% * 1/8);
+    height: 161.989px;
+    flex-shrink: 0;
+    border-radius: 8px;
+    position: relative;
+    transition: all .5s;
+    overflow: hidden;
+}
+
+.front-face {
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
+
+.back-face {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .2);
+    color: #fff;
+    font-size: 20px;
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.back-face span {
+    text-shadow: 1px 1px 1px #000;
+}
+
+.back-icon {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.back-dropdown {
+    background-color: #3c4043;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 17px;
+}
+
+.back-tags {
+    width: 162px;
+    font-size: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.back-tags > div {
+    display: inline-block;
+    width: 1px;
+    height: 1px;
+    background-color: #fff;
+    border-radius: 50%;
+}
+
+.item:hover {
+    /* flex: 2; */
+    width: calc(((100% * 1/8) * 2) + 12px);
+
+}  
+
+.item:hover  >  .back-face {
+    visibility: visible;
+    opacity: 1;
+    z-index: 4;
+}
+    
